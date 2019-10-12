@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace ConversioneAscii
 {
@@ -8,9 +9,12 @@ namespace ConversioneAscii
         {
             Console.WriteLine("Inserisci qualcosa: ");
             string risposta = Console.ReadLine();
-            foreach (char c in risposta)
-            {
-                Console.WriteLine(System.Convert.ToInt32(c));
+            byte[] bytes = Encoding.ASCII.GetBytes(risposta);
+            foreach (var c in bytes)
+                {
+             
+               // int result = BitConverter.ToInt32(bytes, 0);
+                Console.WriteLine(c);
             }
             Console.ReadLine();
         }
